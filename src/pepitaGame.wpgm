@@ -21,7 +21,11 @@ program PepitaGame {
 //	TECLADO
 	keyboard.v().onPressDo { pepita.volaHacia(villaGesell) }
 	keyboard.b().onPressDo { pepita.volaHacia(buenosAires) }
-		
+	
+// COLISIONES
+	game.whenCollideDo(pepita,{ algo => algo.teEncontro(pepita)})
+	
+	
 //	START
 	game.start()
 }
