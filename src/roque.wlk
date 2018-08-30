@@ -17,8 +17,8 @@ object roque {
 
 	method alimentar(alguien) {
 		if (comidaParaAves != null) {
-			game.addVisualIn(comidaParaAves, posicionAleatoria)
 			alguien.come(comidaParaAves)
+			game.addVisualIn(comidaParaAves, posicionAleatoria)
 			comidaParaAves = null
 		} else {
 			game.say(self, "No tengo mas morfi :(")
@@ -27,7 +27,7 @@ object roque {
 
 	method agarrarComida(comida) {
 		if (comidaParaAves != null) {
-			//game.addVisualIn(comida, posicionAleatoria)
+			// game.addVisualIn(comida, posicionAleatoria)
 			game.removeVisual(comidaParaAves)
 		}
 		comidaParaAves = comida
