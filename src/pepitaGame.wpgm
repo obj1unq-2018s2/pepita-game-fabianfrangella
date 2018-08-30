@@ -2,30 +2,28 @@ import pepita.*
 import ciudades.*
 import comidas.*
 import wollok.game.*
+import roque.*
 
 program PepitaGame {
-	
 //	CONFIG	
 	game.title("Pepita")
 	game.height(10)
 	game.width(10)
 	game.ground("suelo.png")
-
 //	VISUALES
-	game.addVisualIn(alpiste, game.at(5,5))
-	game.addVisualIn(manzana, game.at(5,1))
+	game.addVisualIn(alpiste, game.at(5, 5))
+	game.addVisualIn(manzana, game.at(5, 1))
 	game.addVisual(buenosAires)
 	game.addVisual(villaGesell)
-	game.addVisualCharacter(pepita)
-
+	game.addVisualCharacter(roque)
+	game.addVisual(pepita)
 //	TECLADO
-	keyboard.v().onPressDo { pepita.volaHacia(villaGesell) }
-	keyboard.b().onPressDo { pepita.volaHacia(buenosAires) }
-	
+	keyboard.v().onPressDo{ pepita.volaHacia(villaGesell) }
+	keyboard.b().onPressDo{ pepita.volaHacia(buenosAires) }
 // COLISIONES
-	game.whenCollideDo(pepita,{ algo => algo.teEncontro(pepita)})
-	
-	
+	game.whenCollideDo(pepita, { alguien => alguien.alimentar(pepita) })
+	game.whenCollideDo(alpiste, { alguien => alguien.agarrarComida(alpiste) })
+	game.whenCollideDo(manzana, { alguien => alguien.agarrarComida(manzana) })
 //	START
 	game.start()
 }
