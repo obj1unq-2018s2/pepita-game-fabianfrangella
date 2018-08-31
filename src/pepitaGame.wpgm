@@ -23,7 +23,9 @@ program PepitaGame {
 // COLISIONES
 	game.whenCollideDo(pepita, { alguien => alguien.alimentar(pepita) })
 	game.whenCollideDo(alpiste, { alguien => alguien.agarrarComida(alpiste) })
-	game.whenCollideDo(manzana, { alguien => alguien.agarrarComida(manzana) })
+	game.whenCollideDo(manzana, { alguien => alguien.agarrarComida(manzana)
+		
+	})
 //	START
 	game.start()
 }
