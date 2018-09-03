@@ -16,7 +16,7 @@ object roque {
 	method alimentar(alguien) {
 		if (comidaParaAves != null) {
 			alguien.come(comidaParaAves)
-			game.addVisualIn(comidaParaAves, posicionAleatoria) // aparece la comida en un lugar random
+			game.addVisualIn(comidaParaAves,posicionAleatoria)
 			comidaParaAves = null
 			posicionAleatoria = game.at(1.randomUpTo(10), 1.randomUpTo(10)) // cambia la posicion random para la proxima comida
 		} else {
