@@ -6,6 +6,7 @@ object manzana {
 		game.removeVisual(self)
 		alguien.agarrarComida(self)
 	}
+	
 }
 
 object alpiste {
@@ -16,4 +17,5 @@ object alpiste {
 		game.removeVisual(self)
 		alguien.agarrarComida(self)
 	}
+	
 }

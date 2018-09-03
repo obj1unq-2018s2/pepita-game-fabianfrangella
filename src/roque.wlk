@@ -26,7 +26,7 @@ object roque {
 
 	method agarrarComida(comida) {
 		if (comidaParaAves != null) {
-			game.addVisualIn(comidaParaAves, posicion)
+			game.addVisualIn(comidaParaAves, posicion.clone().up(1))
 			comidaParaAves = comida
 			game.removeVisual(comida)
 		} else {
