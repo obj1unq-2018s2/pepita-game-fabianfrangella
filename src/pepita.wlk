@@ -12,7 +12,7 @@ import ciudades.*
 object pepita {
 
 	var property energia = 100
-	var property ciudad = buenosAires
+	var property ciudad = null
 	var property posicion = game.at(3, 3)
 	var property imagen = "pepita.png"
 
