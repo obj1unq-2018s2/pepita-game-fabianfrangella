@@ -8,7 +8,7 @@ import comidas.*
 object roque {
 
 	var property posicion = game.at(4, 4)
-	var property comidaParaAves = alpiste
+	var property comidaParaAves = null
 	var posicionAleatoria = game.at(1.randomUpTo(10), 1.randomUpTo(10))
 
 	method imagen() = "jugador.png"
@@ -16,7 +16,7 @@ object roque {
 	method alimentar(alguien) {
 		if (comidaParaAves != null) {
 			alguien.come(comidaParaAves)
-			game.addVisualIn(comidaParaAves,posicionAleatoria)
+			game.addVisualIn(comidaParaAves, posicionAleatoria)
 			comidaParaAves = null
 			posicionAleatoria = game.at(1.randomUpTo(10), 1.randomUpTo(10)) // cambia la posicion random para la proxima comida
 		} else {
@@ -25,10 +25,9 @@ object roque {
 	}
 
 	method agarrarComida(comida) {
-		if (comidaParaAves != null) {
-			game.addVisualIn(comidaParaAves, posicion.clone().up(1))
+		if (comidaParaAves != null) {		
 			comidaParaAves = comida
-			game.removeVisual(comida)
+			game.addVisualIn(comidaParaAves, posicion.clone().down(1))
 		} else {
 			comidaParaAves = comida
 		}
