@@ -27,6 +27,11 @@ object roque {
 	method agarrarComida(comida) {
 		if (comidaParaAves != null) {		
 			comidaParaAves = comida
+			
+			// TODO Acá asumo que estás intentando devolver la comida que tenías antes,
+			// pero lo estás haciendo después de modificar la variable comidaParaAves
+			// con lo cual la comida anterior ya la perdiste, tenés que hacerlo antes.
+			// TODO Un detalle menor es que el clone no es necesario, down ya me da una nueva posición.
 			game.addVisualIn(comidaParaAves, posicion.clone().down(1))
 		} else {
 			comidaParaAves = comida

@@ -17,6 +17,9 @@ object pepita {
 	var property imagen = "pepita.png"
 
 	method fisico() {
+		// TODO Este precálculo de la imagen es propenso a errores.
+		// Salvo que tengas un muy buen motivo, evitalo.
+		// De hecho, no funciona bien, no hay forma de que pepita vuelva a su forma original.
 		if (energia > 100) {
 			imagen = "pepita-gorda-raw.png"
 		} else if (energia < 10) {
@@ -42,6 +45,7 @@ object pepita {
 	method energiaParaVolar(distancia) = 15 + 5 * distancia
 
 	method move(nuevaPosicion) {
+		// TODO Acá hay una repetición que se puede evitar.
 		if (energia >= self.energiaParaVolar(posicion.distance(nuevaPosicion))) {
 			energia -= self.energiaParaVolar(posicion.distance(nuevaPosicion))
 			self.posicion(nuevaPosicion)
